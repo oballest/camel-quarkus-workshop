@@ -8,8 +8,6 @@ components:
     type: chePlugin
   - id: redhat/vscode-xml/latest
     type: chePlugin
-  - id: redhat/java/latest
-    type: chePlugin
   - mountSources: true
     memoryLimit: 4927M
     type: dockerimage
@@ -30,6 +28,7 @@ components:
       - '-f'
       - /dev/null
     memoryLimit: 32M
+    cpuLimit: 100m
     type: dockerimage
     alias: ubi-minimal
     image: registry.access.redhat.com/ubi8/ubi-minimal
