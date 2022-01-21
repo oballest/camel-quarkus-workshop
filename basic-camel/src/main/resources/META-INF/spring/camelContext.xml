@@ -5,5 +5,5 @@
     <camelContext id="workshopContext" xmlns="http://camel.apache.org/schema/spring">
         <routeBuilder ref="fileProcessorRouteBuilder"/>
     </camelContext>
-    <bean class="com.redhat.gps.camel.FileProcessorRouteBilder" id="fileProcessorRouteBuilder"/>
+    <bean class="com.redhat.gps.camel.FileProcessorRouteBuilder" id="fileProcessorRouteBuilder"/>
 </beans>
