@@ -1,6 +1,19 @@
 apiVersion: 1.0.0
 metadata:
   name: quarkus-workspace
+projects:
+  - name: basic-camel
+    source:
+      type: git
+      location: "https://github.com/oballest/camel-quarkus-workshop.git"
+      sparseCheckoutDir: basic-camel
+      branch: main
+  - name: files
+    source:
+      type: git
+      location: "https://github.com/oballest/camel-quarkus-workshop.git"
+      sparseCheckoutDir: files
+      branch: main
 components:
   - id: redhat/quarkus-java11/latest
     type: chePlugin
