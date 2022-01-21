@@ -51,23 +51,23 @@ commands:
     actions:
       - workdir: '${CHE_PROJECTS_ROOT}/camel-quarkus-workshop/files'
         type: exec
-        command: cp *  ../basic-apache/in_files/basic-filter/
+        command: cp *  ../basic-camel/in_files/basic-filter/
         component: centos-quarkus-maven
   - name: Files basic-filter
     actions:
       - workdir: '${CHE_PROJECTS_ROOT}/camel-quarkus-workshop/files'
         type: exec
-        command: cp *  ../basic-apache/in_files/basic-filter/
+        command: cp *  ../basic-camel/in_files/basic-filter/
         component: centos-quarkus-maven
   - name: Files change-filter
     actions:
       - workdir: '${CHE_PROJECTS_ROOT}/camel-quarkus-workshop/files'
         type: exec
-        command: cp *  ../basic-apache/in_files/change-filter/
+        command: cp *  ../basic-camel/in_files/change-filter/
         component: centos-quarkus-maven
   - name: Files camel-msg
     actions:
       - workdir: '${CHE_PROJECTS_ROOT}/camel-quarkus-workshop/files'
         type: exec
-        command: cp text-file-1.txt ../basic-apache/in_files/camel-msg/
+        command: cp text-file-1.txt ../basic-camel/in_files/camel-msg/
         component: centos-quarkus-maven
