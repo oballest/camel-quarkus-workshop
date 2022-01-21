@@ -1,0 +1,1 @@
+Texto a procesar por Camel # 2
