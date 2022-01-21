@@ -67,7 +67,7 @@ commands:
         type: exec
         command: cp *  ../basic-apache/in_files/change-filter/
         component: centos-quarkus-maven
-  - name: Files change-filter
+  - name: Files camel-msg
     actions:
       - workdir: '${CHE_PROJECTS_ROOT}/camel-quarkus-workshop/files'
         type: exec
