@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.redhat.gps.camel</groupId>
-  <artifactId>basic-camel</artifactId>
+  <artifactId>basic-camel-sol</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>basic-camel</name>
+  <name>basic-camel-sol</name>
  
 
   <properties>
