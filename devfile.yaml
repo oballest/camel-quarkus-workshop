@@ -51,7 +51,7 @@ components:
 commands:
   - name: Run Camel
     actions:
-      - workdir: '${CHE_PROJECTS_ROOT}/Lab/basic-camel'
+      - workdir: '${CHE_PROJECTS_ROOT}/Lab1/basic-camel'
         type: exec
         command: mvn compile camel:run
         component: centos-quarkus-maven
