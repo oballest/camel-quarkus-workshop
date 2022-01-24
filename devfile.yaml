@@ -2,11 +2,21 @@ apiVersion: 1.0.0
 metadata:
   name: quarkus-workspace
 projects:
-  - name: camel-quarkus-workshop
+  - name: Lab1
     source:
+      location: 'https://github.com/oballest/camel-quarkus-workshop.git'
       type: git
-      location: "https://github.com/oballest/camel-quarkus-workshop.git"
-      branch: main
+      sparseCheckoutDir: /basic-camel/
+  - name: files
+    source:
+      location: 'https://github.com/oballest/camel-quarkus-workshop.git'
+      type: git
+      sparseCheckoutDir: /files/
+  - name: solutions
+    source:
+      location: 'https://github.com/oballest/camel-quarkus-workshop.git'
+      type: git
+      sparseCheckoutDir: /solutions/
 components:
   - id: redhat/quarkus-java11/latest
     type: chePlugin
@@ -41,31 +51,31 @@ components:
 commands:
   - name: Run Camel
     actions:
-      - workdir: '${CHE_PROJECTS_ROOT}/camel-quarkus-workshop/basic-camel'
+      - workdir: '${CHE_PROJECTS_ROOT}/Lab/basic-camel'
         type: exec
         command: mvn compile camel:run
         component: centos-quarkus-maven
   - name: Files basic-copy
     actions:
-      - workdir: '${CHE_PROJECTS_ROOT}/camel-quarkus-workshop/files'
+      - workdir: '${CHE_PROJECTS_ROOT}/files/files'
         type: exec
-        command: cp *  ../basic-camel/in_files/basic-filter/
+        command: cp *  /projects/Lab1/basic-camel/in_files/basic-filter/
         component: centos-quarkus-maven
   - name: Files basic-filter
     actions:
       - workdir: '${CHE_PROJECTS_ROOT}/camel-quarkus-workshop/files'
         type: exec
-        command: cp *  ../basic-camel/in_files/basic-filter/
+        command: cp *  /projects/Lab1/basic-camel/in_files/basic-filter/
         component: centos-quarkus-maven
   - name: Files change-filter
     actions:
       - workdir: '${CHE_PROJECTS_ROOT}/camel-quarkus-workshop/files'
         type: exec
-        command: cp *  ../basic-camel/in_files/change-filter/
+        command: cp *  /projects/Lab1/basic-camel/in_files/change-filter/
         component: centos-quarkus-maven
   - name: Files camel-msg
     actions:
       - workdir: '${CHE_PROJECTS_ROOT}/camel-quarkus-workshop/files'
         type: exec
-        command: cp text-file-1.txt ../basic-camel/in_files/camel-msg/
+        command: cp text-file-1.txt /projects/Lab1/basic-camel/in_files/camel-msg/
         component: centos-quarkus-maven
