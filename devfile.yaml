@@ -63,19 +63,19 @@ commands:
         component: centos-quarkus-maven
   - name: Files basic-filter
     actions:
-      - workdir: '${CHE_PROJECTS_ROOT}/camel-quarkus-workshop/files'
+      - workdir: '${CHE_PROJECTS_ROOT}/files/files'
         type: exec
         command: cp *  /projects/Lab1/basic-camel/in_files/basic-filter/
         component: centos-quarkus-maven
   - name: Files change-filter
     actions:
-      - workdir: '${CHE_PROJECTS_ROOT}/camel-quarkus-workshop/files'
+      - workdir: '${CHE_PROJECTS_ROOT}/files/files'
         type: exec
         command: cp *  /projects/Lab1/basic-camel/in_files/change-filter/
         component: centos-quarkus-maven
   - name: Files camel-msg
     actions:
-      - workdir: '${CHE_PROJECTS_ROOT}/camel-quarkus-workshop/files'
+      - workdir: '${CHE_PROJECTS_ROOT}/files/files'
         type: exec
         command: cp text-file-1.txt /projects/Lab1/basic-camel/in_files/camel-msg/
         component: centos-quarkus-maven
