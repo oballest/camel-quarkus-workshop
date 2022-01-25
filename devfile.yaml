@@ -59,7 +59,7 @@ commands:
     actions:
       - workdir: '${CHE_PROJECTS_ROOT}/files/files'
         type: exec
-        command: cp *  /projects/Lab1/basic-camel/in_files/basic-filter/
+        command: cp *  /projects/Lab1/basic-camel/in_files/basic-copy/
         component: centos-quarkus-maven
   - name: Files basic-filter
     actions:
