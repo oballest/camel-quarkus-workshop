@@ -6,21 +6,25 @@ projects:
     source:
       location: 'https://github.com/oballest/camel-quarkus-workshop.git'
       type: git
+      branch: main
       sparseCheckoutDir: /basic-camel/
   - name: Lab2
     source:
       location: 'https://github.com/oballest/camel-quarkus-workshop.git'
       type: git
+      branch: main
       sparseCheckoutDir: /camel-routing/
   - name: files
     source:
       location: 'https://github.com/oballest/camel-quarkus-workshop.git'
       type: git
+      branch: main
       sparseCheckoutDir: /files/
   - name: solutions
     source:
       location: 'https://github.com/oballest/camel-quarkus-workshop.git'
       type: git
+      branch: main
       sparseCheckoutDir: /solutions/
 components:
   - id: redhat/quarkus-java11/latest
