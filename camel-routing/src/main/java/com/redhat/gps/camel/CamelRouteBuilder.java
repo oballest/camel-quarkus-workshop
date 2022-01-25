@@ -10,7 +10,7 @@ public class CamelRouteBuilder extends RouteBuilder{
         
         JaxbDataFormat df = new JaxbDataFormat("com.redhat.gps.model");
 
-        from("file:inf_files/personas-in")
+        from("file:in_files/personas-in")
         .split().tokenizeXML("persona")
         .log("split xml body ${body}")
         .unmarshal(df)
@@ -19,6 +19,22 @@ public class CamelRouteBuilder extends RouteBuilder{
         .to("direct:process-bean");
 
         from("direct:error-process")
+        .errorHandler(deadLetterChannel("direct:error-handler"))
+        .log("${body}")
+        .choice()
+            .when(simple("${body.ciudad} != 'Bogota' and ${body.ciudad} != 'Medellin'"))
+                .throwException(IllegalStateException.class, "Ciudad No soportada")
+            .otherwise()
+                .log("Ciudad Soportada")
+        .end()
+        .to("direct:try-catch-process");
+
+        from("direct:error-handler")
+        .log("Manejando eror ${exception} ,${exception.message}")
+        .to("log:com.redhat.gps.camel.rutadeadleter");
+
+
+        from("direct:try-catch-process")
         .log("${body}");
 
         
