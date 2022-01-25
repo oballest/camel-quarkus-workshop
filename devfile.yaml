@@ -7,6 +7,11 @@ projects:
       location: 'https://github.com/oballest/camel-quarkus-workshop.git'
       type: git
       sparseCheckoutDir: /basic-camel/
+  - name: Lab2
+    source:
+      location: 'https://github.com/oballest/camel-quarkus-workshop.git'
+      type: git
+      sparseCheckoutDir: /camel-routing/
   - name: files
     source:
       location: 'https://github.com/oballest/camel-quarkus-workshop.git'
@@ -78,4 +83,10 @@ commands:
       - workdir: '${CHE_PROJECTS_ROOT}/files/files'
         type: exec
         command: cp text-file-1.txt /projects/Lab1/basic-camel/in_files/camel-msg/
+        component: centos-quarkus-maven
+  - name: Run Camel Lab2
+    actions:
+      - workdir: '${CHE_PROJECTS_ROOT}/Lab2/camel-routing'
+        type: exec
+        command: mvn compile camel:run
         component: centos-quarkus-maven
