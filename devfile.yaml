@@ -94,3 +94,9 @@ commands:
         type: exec
         command: mvn compile camel:run
         component: centos-quarkus-maven
+  - name: Files camel-routing
+    actions:
+      - workdir: '${CHE_PROJECTS_ROOT}/files/files'
+        type: exec
+        command: cp personas.xml /projects/Lab2/camel-routing/in_files/personas-in/
+        component: centos-quarkus-maven

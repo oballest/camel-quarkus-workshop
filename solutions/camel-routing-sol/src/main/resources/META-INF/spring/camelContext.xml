@@ -4,6 +4,21 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
     <camelContext id="workshopContext" xmlns="http://camel.apache.org/schema/spring">
         <routeBuilder ref="camelRouteBuilder"/>
+
+        <camel:route>
+            <camel:from uri="direct:process-bean"/>
+            <camel:choice>
+                <camel:when>
+                    <camel:simple>${body.ciudad} == 'Medellin'</camel:simple>
+                    <camel:bean ref="personaBean" method="edicionPersona"></camel:bean>
+                </camel:when>
+                <camel:otherwise>
+                    <camel:process ref="personaProcessor"/>
+                </camel:otherwise>
+            </camel:choice>
+            <camel:to uri="direct:error-process"/>
+        </camel:route>
+
     </camelContext>
     <bean class="com.redhat.gps.camel.CamelRouteBuilder" id="camelRouteBuilder"/>
     <bean class="com.redhat.gps.beans.PersonaBean" id="personaBean"/>

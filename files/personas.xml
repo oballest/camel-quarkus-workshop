@@ -38,3 +38,16 @@
         <ingresos>1000000.85</ingresos>
     </informacionFinanciera>
 </persona>
+<persona>
+    <id>13</id>
+    <nombre>Andres</nombre>
+    <apellido>Ramirez</apellido>
+    <ciudad>Cali</ciudad>
+    <email>aramirez</email>
+    <informacionFinanciera>
+	<id>13</id>
+        <direccion>Cll 6 # 10 - 33</direccion>
+        <fechaReporte>1999-11-10T00:00:00-05:00</fechaReporte>
+        <ingresos>5000000.99</ingresos>
+    </informacionFinanciera>
+</persona>
