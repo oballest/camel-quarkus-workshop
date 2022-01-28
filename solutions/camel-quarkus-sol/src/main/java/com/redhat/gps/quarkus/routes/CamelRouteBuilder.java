@@ -64,11 +64,6 @@ public class CamelRouteBuilder extends RouteBuilder{
         .bean("personaRepository", "getTodas")
         .log("Response ${body}");
 
-        from("direct:getPersonaById")
-        .log("Body request ${body} Header ${header.idPersona}")
-        .bean("personaRepository", "getPersonaById")
-        .log("Response ${body}");
-
         from("direct:createPersona")
         .log("Body request ${body}")
         .bean("personaRepository", "insertPersona")

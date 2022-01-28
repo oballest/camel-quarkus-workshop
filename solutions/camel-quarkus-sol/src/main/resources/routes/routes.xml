@@ -1,0 +1,12 @@
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://camel.apache.org/schema/spring"
+        xsi:schemaLocation="http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+    <route id="getPersonaByIdRoute">
+        <from uri="direct:getPersonaById"/>
+        <log message="Body request ${body} Header ${header.idPersona}"/>
+        <bean ref="personaRepository" method="getPersonaById"/>
+        <log message="Response ${body}"/>
+    </route>
+
+</routes>
