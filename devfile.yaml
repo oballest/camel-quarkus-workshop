@@ -14,6 +14,12 @@ projects:
       type: git
       branch: main
       sparseCheckoutDir: /camel-routing/
+  - name: Lab3
+    source:
+      location: 'https://github.com/oballest/camel-quarkus-workshop.git'
+      type: git
+      branch: main
+      sparseCheckoutDir: /camel-quarkus/
   - name: files
     source:
       location: 'https://github.com/oballest/camel-quarkus-workshop.git'
@@ -99,4 +105,10 @@ commands:
       - workdir: '${CHE_PROJECTS_ROOT}/files/files'
         type: exec
         command: cp personas.xml /projects/Lab2/camel-routing/in_files/personas-in/
+        component: centos-quarkus-maven
+  - name: Run Quarkus Lab3
+    actions:
+      - workdir: '${CHE_PROJECTS_ROOT}/Lab3/camel-quarkus'
+        type: exec
+        command: mvn compile quarkus:dev
         component: centos-quarkus-maven

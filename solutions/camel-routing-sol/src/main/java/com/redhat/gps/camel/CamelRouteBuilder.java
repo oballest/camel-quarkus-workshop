@@ -32,7 +32,7 @@ public class CamelRouteBuilder extends RouteBuilder{
         .to("direct:try-catch-process");
 
         from("direct:error-handler")
-        .log("Manejando eror ${exception} ,${exception.message}")
+        .log("Manejando error ${exception} ,${exception.message}")
         .to("log:com.redhat.gps.camel.rutadeadleter");
 
 
